@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  broker-local:
+    image: rabbitmq:3-management-alpine    
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - messaging
+
+networks: 
+    messaging:
+      driver: bridge
