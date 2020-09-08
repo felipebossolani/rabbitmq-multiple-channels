@@ -17,9 +17,9 @@ namespace publisher
                 var channel1 = CreateChannel(connection);
                 var channel2 = CreateChannel(connection);
 
-                BuildPublishers(channel1, queueName, "Produtor A");
-                BuildPublishers(channel2, queueName, "Produtor B");
-                BuildPublishers(channel2, queueName, "Produtor C");
+                BuildPublishers(channel1, queueName, "Produtor A", "A");
+                BuildPublishers(channel2, queueName, "Produtor B", "B");
+                BuildPublishers(channel2, queueName, "Produtor C", "C");
 
                 Console.ReadLine();
             }
@@ -31,7 +31,7 @@ namespace publisher
             return channel;
         }
 
-        public static void BuildPublishers(IModel channel, string queue, string publisherName)
+        public static void BuildPublishers(IModel channel, string queue, string publisherName, string orderSufix)
         {
             Task.Run(() =>
             {
@@ -45,12 +45,12 @@ namespace publisher
 
                 while (true)
                 {
-                    string message = $"{publisherName} - OrderNumber: {count++}";
+                    string message = $"{publisherName} - OrderNumber: {count++}{orderSufix}";
                     var body = Encoding.UTF8.GetBytes(message);
 
                     channel.BasicPublish("", queue, null, body);
 
-                    Console.WriteLine($"{publisherName} - [x] Sent {count}", message);
+                    Console.WriteLine(message);
                     System.Threading.Thread.Sleep(1000);
                 }
             });
