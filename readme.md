@@ -16,5 +16,6 @@ Que é o responsável por publicar as mensagens. Basta dar um run nesse projeto 
 Que é o responsável por ler a fila e consumir as mensagens.
 
 ### Referências
-Playlist do Brandão no Youtube: https://www.youtube.com/playlist?list=PLfhPyyHRfeug87iBjkAP2ulwcqObiO_fW
-Série do Gago.io: https://gago.io/categoria/trilhas/rabbitmq-a-z/
+[Playlist do Brandão no Youtube](https://www.youtube.com/playlist?list=PLfhPyyHRfeug87iBjkAP2ulwcqObiO_fW)
+[Série do Gago.io](https://gago.io/categoria/trilhas/rabbitmq-a-z/)
+
