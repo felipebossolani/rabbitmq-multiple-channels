@@ -51,7 +51,7 @@ namespace publisher
                     channel.BasicPublish("", queue, null, body);
 
                     Console.WriteLine(message);
-                    System.Threading.Thread.Sleep(1000);
+                    System.Threading.Thread.Sleep(100);
                 }
             });
         }
